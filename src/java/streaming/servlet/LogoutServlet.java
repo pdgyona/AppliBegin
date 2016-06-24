@@ -28,7 +28,7 @@ public class LogoutServlet extends HttpServlet {
 */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Cookie c = new Cookie("loggin", null);
+       /* Cookie c = new Cookie("loggin", null);
         c.setMaxAge(0);
         resp.addCookie(c);
         
@@ -39,8 +39,8 @@ public class LogoutServlet extends HttpServlet {
         Cookie c2 = new Cookie("util_type", null);
         c2.setMaxAge(0);
         resp.addCookie(c2);
-        
-        
+        */
+       req.getSession().removeAttribute("utilConnecte");
         resp.sendRedirect("film_liste");
     }
     

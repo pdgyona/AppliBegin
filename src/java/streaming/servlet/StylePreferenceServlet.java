@@ -23,16 +23,15 @@ public class StylePreferenceServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-     String style1 = "style1";
-     String style2 = "style2";
-        resp.addCookie(new Cookie("style1", style1));
-     resp.addCookie(new Cookie("style2", style2));
+       
+     String style = req.getParameter("style");
+     
+
+        resp.addCookie(new Cookie("style_preference", style));
+        resp.sendRedirect("film_liste");
+     
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("_STYLESHEET.jsp").forward(req, resp);
-    }
     
     
 }

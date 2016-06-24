@@ -6,20 +6,8 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<c:choose>
-    <c:when test="${cookie.style1=='style1'}">
-        <link href="css/style1.css" rel="stylesheet" type="text/css"/>
-    </c:when>
-</c:choose>
-<c:otherwise>
+ <link href="css/${cookie.style_preference.getValue()}.css" rel="stylesheet" type="text/css"/>
 
-
-    <c:if test="${cookie.style2=='style2' }">
-
-        <link href="css/style2.css" rel="stylesheet" type="text/css"/>
-    </c:if>
-</c:otherwise>
-        
 
 
 

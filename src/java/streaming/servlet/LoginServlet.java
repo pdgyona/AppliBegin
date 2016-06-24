@@ -29,6 +29,8 @@ public class LoginServlet extends HttpServlet {
         String login = req.getParameter("login");
             String pass = req.getParameter("pass");
             Utilisateur u = new UserService().connecter();
+            
+            req.getSession().setAttribute("utilConnecte", u);
 
             resp.addCookie(new Cookie("login", login));
             resp.addCookie(new Cookie("pass", pass));
